@@ -25,6 +25,7 @@ def wifi_init():
 def mqtt_pub(data):
     client.connect()
     client.publish(TOPIC, data)
+    client.disconnect()
 
 if __name__=='__main__':
     wifi_init()

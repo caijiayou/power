@@ -37,7 +37,7 @@ while True:
         pf = read_all[8]/10.0
         data.append(pf)
         print('Voltage: %sV, Current: %sA, Power: %sW, Energy: %skWh, Frequency: %sHz, pf: %s' %(voltage, current, power, energy, freq, pf))
-        OLed.oLed(data)
+        #OLed.oLed(data)
         data.append('esp32_01')
         mq.mqtt_pub(str(data))
         time.sleep(0.5)
