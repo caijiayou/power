@@ -3,9 +3,14 @@ import time
 import struct
 import py_mqtt as mq
 import oled as OLed
+from INA219_example import myina219
 
 uart = UART(1, 9600, tx=17, rx=16)                                            # Initialize UART port.
 mq.wifi_init()
+
+def G_read():
+    Generator = myina219()
+    return Generator
 
 def em_read():
     signed=True
@@ -40,8 +45,13 @@ while True:
         #OLed.oLed(data)
         data.append('esp32_01')
         mq.mqtt_pub(str(data))
+        
+        Generator = myina219()
+        mq.mqtt_pub(str(Generator))
+        
         time.sleep(0.5)
     except:
+        print('Error')
         pass
 
 
