@@ -45,7 +45,7 @@ while True:
         print('\n')
         print('--'*30)
         #OLed.oLed(data)
-        data.append('esp32_01')
+        data.append('esp32_01_ssd1306')
         print('INA219: ')
         Generator = myina219()
         print(Generator)
@@ -53,6 +53,7 @@ while True:
         print('Voltage: %sV, Current: %sA, Power: %sW, Energy: %skWh, Frequency: %sHz, pf: %s' %(voltage, current, power, energy, freq, pf))
         print('--'*30)
         mq.mqtt_pub(str(data))
+        Generator.append('esp32_01_INA219')
         # mq.mqtt_pub(str(Generator))
         
         time.sleep(0.5)
