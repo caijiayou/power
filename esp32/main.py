@@ -4,6 +4,7 @@ import struct
 import py_mqtt as mq
 import oled as OLed
 from INA219_example import myina219
+import traceback
 
 uart = UART(1, 9600, tx=17, rx=16)                                            # Initialize UART port.
 mq.wifi_init()
@@ -51,8 +52,8 @@ while True:
         # mq.mqtt_pub(str(Generator))
         
         time.sleep(0.5)
-    except:
-        print('Error')
-        pass
+        
+    except Exception as e:
+        traceback.print_exc()
 
 
