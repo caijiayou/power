@@ -42,18 +42,23 @@ while True:
         data.append(freq)
         pf = read_all[8]/10.0
         data.append(pf)
-        print('Voltage: %sV, Current: %sA, Power: %sW, Energy: %skWh, Frequency: %sHz, pf: %s' %(voltage, current, power, energy, freq, pf))
+        print('\n')
+        print('--'*30)
         #OLed.oLed(data)
         data.append('esp32_01')
-        mq.mqtt_pub(str(data))
-        
+        print('INA219: ')
         Generator = myina219()
         print(Generator)
+        print('\nssd1306: ')
+        print('Voltage: %sV, Current: %sA, Power: %sW, Energy: %skWh, Frequency: %sHz, pf: %s' %(voltage, current, power, energy, freq, pf))
+        print('--'*30)
+        mq.mqtt_pub(str(data))
         # mq.mqtt_pub(str(Generator))
         
         time.sleep(0.5)
         
     except Exception as e:
         traceback.print_exc()
+
 
 
