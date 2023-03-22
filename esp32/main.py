@@ -47,7 +47,8 @@ while True:
         mq.mqtt_pub(str(data))
         
         Generator = myina219()
-        mq.mqtt_pub(str(Generator))
+        print(Generator)
+        # mq.mqtt_pub(str(Generator))
         
         time.sleep(0.5)
     except:
