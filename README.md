@@ -1,9 +1,10 @@
 <font color=#00FFFF>**將esp32資料夾內code燒入晶片中執行main.py檔即可**</font>
 >|--main.py              #主程式   
+>|--Sensor.py            #感測器程式  
+>>**Lib**  
 >|--oled.py              #oled副程式沒用到刪除即可   
->|--py_mqtt.py           #mptt副程式   
+>|--my_mqtt.py           #mptt副程式   
 >|--ssd1306.py           #oled_I2C介面副程式   
->|--INA219_example.py    #電源檢測(發電機)模組程式  
 >|--ina219.py            #電源檢測(發電機)模組I2C介面副程式  
 
 <font color=#00FFFF>**RPi資料夾內code為模擬mqtt發收.py檔**</font>
