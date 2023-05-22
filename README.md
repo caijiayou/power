@@ -1,6 +1,7 @@
 <font color=#00FFFF>**將esp32資料夾內code燒入晶片中執行main.py檔即可**</font>
 >|--main.py              #主程式   
 >|--Sensor.py            #感測器程式  
+>|--setup.py             #在esp32上執行即可安裝對應模組
 >>**Lib**  
 >|--oled.py              #oled副程式沒用到刪除即可   
 >|--my_mqtt.py           #mptt副程式   
